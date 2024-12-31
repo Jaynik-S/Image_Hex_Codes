@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Hex Code Table</title>
+</head>
+<body>
+    <h1>Hex Code Table</h1>
+    <form method="POST" action="/process">
+        <input type="hidden" name="image_path" value="{{ image_path }}">
+        <label for="step">Step Size: </label>
+        <input type="range" id="step" name="step" min="1" max="100" value="{{ step }}" oninput="updateStepValue(this.value)">
+        <span id="stepValue">{{ step }}</span>
+        <button type="submit">Update Table</button>
+    </form>
+
+    <table>
+        <tbody>
+            {% for row in table %}
+                <tr>
+                    {% for hex_code in row %}
+                        <td style="background-color: {{ hex_code }}; color: #fff;">{{ hex_code }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function updateStepValue(value) {
+            document.getElementById('stepValue').innerText = value;
+        }
+    </script>
+</body>
+</html>

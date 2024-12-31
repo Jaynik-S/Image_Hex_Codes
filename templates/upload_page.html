@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Upload an Image</title>
+    <script>
+        function handlePaste(event) {
+            const clipboardItems = event.clipboardData.items;
+            for (const item of clipboardItems) {
+                if (item.type.startsWith('image/')) {
+                    const file = item.getAsFile();
+                    const formData = new FormData();
+                    formData.append('image', file);
+
+                    fetch('/upload', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(html => {
+                        document.body.innerHTML = html;
+                    })
+                    .catch(error => console.error('Error uploading image:', error));
+                }
+            }
+        }
+
+        document.addEventListener('paste', handlePaste);
+    </script>
+</head>
+<body>
+    <h1>Upload an Image to Get Hex Codes</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
