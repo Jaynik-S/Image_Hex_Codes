@@ -11,7 +11,7 @@ This project is a Flask-based web application that allows users to upload images
 
 ## Live Demo
 
-Access the live website here: [Hex Code Image Processor](https://hex-code-image.onrender.com/)&#8203;:contentReference[oaicite:0]{index=0}.
+Access the live website here: [Hex Code Image Processor](https://hex-code-image.onrender.com/)&#8203;
 
 ## Getting Started
 
