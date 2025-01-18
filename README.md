@@ -46,10 +46,10 @@ Access the live website here: [Hex Code Image Processor](https://hex-code-image.
 
 ## Project Structure
 
-- **app.py**: The main application file, including all Flask routes and image processing logic&#8203;:contentReference[oaicite:1]{index=1}.
+- **app.py**: The main application file, including all Flask routes and image processing logic&#8203;.
 - **templates/**:
-  - **upload_page.html**: The homepage where users can upload an image&#8203;:contentReference[oaicite:2]{index=2}.
-  - **hex_table.html**: Displays the hex code table and allows users to adjust the step size dynamically&#8203;:contentReference[oaicite:3]{index=3}.
+  - **upload_page.html**: The homepage where users can upload an image&#8203;.
+  - **hex_table.html**: Displays the hex code table and allows users to adjust the step size dynamically&#8203;.
 - **static/**: Contains static files such as CSS for styling.
 - **uploads/**: Directory for storing uploaded images.
 
